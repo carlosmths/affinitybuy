@@ -1,10 +1,13 @@
-import classNames from 'classnames';
+import { cn } from '@/lib/utils';
 
 interface ContainerProps {
   children: React.ReactNode;
   className?: string;
 }
 
-export default function Container({ children, className }: ContainerProps) {
-  return <div className={classNames('container mx-auto px-4 py-16 max-w-screen-2xl', className)}>{children}</div>;
-}
+const Container: React.FC<ContainerProps> = (props) => {
+  const { children, className } = props;
+  return <div className={cn('container mx-auto px-4 py-16 max-w-screen-2xl', className)}>{children}</div>;
+};
+
+export default Container;
