@@ -1,9 +1,15 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/header';
 
-const inter = Inter({ subsets: ['latin'] });
+const roboto = Roboto({
+  weight: ['100', '300', '400', '500', '700', '900'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto',
+});
 
 export const metadata: Metadata = {
   title: 'AffinityBuy - Your Ultimate Shopping Destination!',
@@ -16,8 +22,8 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={roboto.className}>
         <Header />
         {children}
       </body>

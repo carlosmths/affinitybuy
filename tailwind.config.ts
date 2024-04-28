@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        roboto: 'var(--font-roboto)',
+      },
       colors: {
         'erie-black': '#1E1E1E',
       },
