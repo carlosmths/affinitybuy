@@ -14,6 +14,9 @@ const config: Config = {
       colors: {
         'erie-black': '#1E1E1E',
       },
+      spacing: {
+        'full-hd': '120rem',
+      },
     },
   },
   plugins: [],
