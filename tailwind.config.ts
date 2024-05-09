@@ -16,6 +16,12 @@ const config: Config = {
       },
       spacing: {
         'full-hd': '120rem',
+        'inner-container': '71rem',
+      },
+      container: {
+        center: true,
+        padding: 'theme(spacing.4)',
+        screens: {},
       },
     },
   },

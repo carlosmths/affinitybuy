@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --space-inner-container: theme(spacing.inner-container);
+  }
+
+  html,
+  body {
+    @apply overflow-x-hidden;
+  }
+
   body {
     @apply text-sm scroll-smooth bg-gray-100;
   }
@@ -40,6 +49,22 @@
     @apply font-medium;
   }
 
+  ::-webkit-scrollbar {
+    @apply h-1 lg:h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-[#F1F1F1] rounded-lg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#888] rounded-lg;
+
+    &:hover {
+      @apply bg-[#555];
+    }
+  }
+
   /* Desktop screen */
   @screen lg {
     body {
@@ -48,18 +73,24 @@
   }
 }
 
+@layer components {
+  .container {
+    @apply max-w-6xl;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 
-  /* Chrome, Safari and Opera */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
   .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    @apply pb-1 lg:pb-2;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }

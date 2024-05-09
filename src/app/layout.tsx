@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import './globals.scss';
 import Header from '@/components/header';
+import { GlobalContextProvider } from '@/contexts/global-context';
 
 const roboto = Roboto({
   weight: ['100', '300', '400', '500', '700', '900'],
@@ -24,8 +25,10 @@ const RootLayout = ({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={roboto.className}>
-        <Header />
-        {children}
+        <GlobalContextProvider>
+          <Header />
+          {children}
+        </GlobalContextProvider>
       </body>
     </html>
   );
