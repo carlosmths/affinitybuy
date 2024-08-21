@@ -50,7 +50,7 @@
   }
 
   ::-webkit-scrollbar {
-    @apply h-1 lg:h-2;
+    @apply h-1 w-1 lg:h-2 lg:w-2;
   }
 
   ::-webkit-scrollbar-track {
